@@ -1,0 +1,58 @@
+UniqueId||UNCb7420979
+LocalId||b7420979
+909||20130620
+Source||Catalog
+008PubDate||2012
+OCLCNumber||ASP1760822/flon
+003||VaAlASP
+100_facet||Breinholt, Thomas.
+100||Breinholt, Thomas,|director producer
+245c||produced and directed by Thomas Breinholt, Danish Radio.
+245||Soul & science [electronic resource] : the power of the mind
+245sort||Soul & science [electronic resource] : the power of the mind
+260||New York, NY : Filmakers Library, 2012.
+260b||Filmakers Library,
+260c||2012.
+300||1 streaming video (57 min.).
+500||Title from resource description page (viewed Jul. 13, 2012).
+520||seq001|It is well known that our minds affect our bodies, but this film gives dramatic examples, including scientific data, of people who recovered from debilitating physical and mental illnesses, including depression and post traumatic stress syndrome, without the aid of drugs. Researchers at established institutions in Europe and America share their observations, as well. The documentary opens with the dramatic story of a 26-year-old man who attempted suicide by swallowing a huge dose of pills he had been given. Nothing the ER crew tried to help revive him was any benefit. Ultimately ER contacted his family doctor who revealed that the pills were a placebo for a double-blind study. Learning that, the patient made a full recovery, his vital signs improved, and he was cured. Forty-year-old Judy was violently dyskinetic; she could be violently flailing around one moment, and unable to move the next. Thinking she had undergone brain surgery to correct her condition, her symptoms disappeared. Dr. Fabrizzio Benedetti in Turin tells of remarkable success treating Parkinson's patients using placebos. A specialist in developmental cell biology asserts that only 10% of physical illness is "physical." When we are afraid, he says, stress hormones are released. The film asserts that alternative methods such as meditation and visualization should be used more often to treat patients. The brain and the immune system clearly communicate with one another.
+530||Previously released as DVD.
+546||This edition in English.
+590_indexed||Provider: Alexander Street Press.
+590||Vendor-supplied catalog record.
+650a||Health
+650||seq001|Health.
+650a||Mental health
+650||seq002|Mental health.
+650a||Mental illness
+650||seq003|Mental illness.
+650a||Mind and body
+650||seq004|Mind and body.
+655a||Nonfiction films
+655||seq005|Nonfiction films.
+710a||Danmarks radio.|
+773||Filmakers library online (online collection).
+776||Original
+Primary_URL||http://libproxy.lib.unc.edu/login?url=http://www.aspresolver.com/aspresolver.asp?FLON;1760822|Streaming video available via the UNC-Chapel Hill Libraries|
+919||ASPSVFLON
+999Lib||ul
+995||UNC
+Syndetics_ISBN||seq001|UNCb7420979
+BibCallNo||
+CallNoSort||
+999Callno||
+BibCallNo||
+999Loc||erra
+999Loc_orig||erra
+999ItemType||Online Video
+999ItemType_orig||Online Video
+999ItemType||Internet Resource
+999Status||Available
+999Status_orig||Available
+999Lib||er
+999Lib_orig||er
+999Circ||
+999Barcode||
+999ItemNote||
+Rollup||ASP1760822/flon
+REC

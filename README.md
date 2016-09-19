@@ -14,5 +14,5 @@ Developing shared data submission format
 
 # Records
 * [b1304177](http://trlnr610c.trln.org:8888/endeca_jspref/controller.jsp?sid=13704A964F65&enePort=8070&R=UNCb1304177&eneHost=trlnr610c.trln.org) - [TRLN](http://search.trln.org/search?id=UNCb1304177) - [UNC](http://search.lib.unc.edu/search?R=UNCb1304177) - Serial; Russian/Cyrillic vernacular; 2 instances of 710 field, both with associated 880
-* [b5344382]() - TRLN - UNC - ebook x x v x r3
-* - TRLN - UNC - Bib record for archival collection with EAD data merged in. *currently EAD data/merge is busted*
+* [b7420979](http://trlnr610c.trln.org:8888/endeca_jspref/controller.jsp?sid=13704A964F65&enePort=8070&R=ASPb7420979&eneHost=trlnr610c.trln.org) - [TRLN](http://search.trln.org/search?id=ASPb7420979) - [UNC](http://search.lib.unc.edu/search?R=ASPb7420979) - online streaming video + shared record with Duke
+* - TRLN - UNC - Bib record for archival collection with EAD data merged in. **currently UNC EAD data/merge is busted -- I'll get this example in when I can** 

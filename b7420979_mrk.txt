@@ -1,0 +1,37 @@
+=LDR  03234cgm a22004453a 4500
+=001  ASP1760822/flon
+=003  VaAlASP
+=005  20130206181035.0
+=006  m\\\\||\\c\|\\\\\\
+=007  cr\|n|---||a|a
+=007  vz\|zazu|
+=008  130417s2012\\\\nyu057\g\\\\\|o\\\v|eng\d
+=040  \\$aALSTP$beng$cALSTP$dVaAlASP
+=100  1\$aBreinholt, Thomas.$4drt$4pro.
+=245  10$aSoul & science$h[electronic resource] :$bthe power of the mind /$cproduced and directed by Thomas Breinholt, Danish Radio.
+=260  \\$aNew York, NY :$bFilmakers Library,$c2012.
+=300  \\$a1 streaming video (57 min.).
+=500  \\$aTitle from resource description page (viewed Jul. 13, 2012).
+=520  \\$aIt is well known that our minds affect our bodies, but this film gives dramatic examples, including scientific data, of people who recovered from debilitating physical and mental illnesses, including depression and post traumatic stress syndrome, without the aid of drugs. Researchers at established institutions in Europe and America share their observations, as well.  The documentary opens with the dramatic story of a 26-year-old man who attempted suicide by swallowing a huge dose of pills he had been given. Nothing the ER crew tried to help revive him was any benefit. Ultimately ER contacted his family doctor who revealed that the pills were a placebo for a double-blind study. Learning that, the patient made a full recovery, his vital signs improved, and he was cured.  Forty-year-old Judy was violently dyskinetic; she could be violently flailing around one moment, and unable to move the next. Thinking she had undergone brain surgery to correct her condition, her symptoms disappeared.  Dr. Fabrizzio Benedetti in Turin tells of remarkable success treating Parkinson's patients using placebos. A specialist in developmental cell biology asserts that only 10% of physical illness is "physical." When we are afraid, he says, stress hormones are released. The film asserts that alternative methods such as meditation and visualization should be used more often to treat patients. The brain and the immune system clearly communicate with one another.
+=546  \\$aThis edition in English.
+=590  \\$aProvider: Alexander Street Press.
+=590  \\$aVendor-supplied catalog record.
+=530  \\$aPreviously released as DVD.
+=650  \0$aHealth.
+=650  \0$aMental health.
+=650  \0$aMental illness.
+=650  \0$aMind and body.
+=655  \7$aNonfiction films.$2lcgft.
+=710  2\$aDanmarks radio.
+=773  0\$tFilmakers library online (online collection)
+=776  1\$cOriginal$w(OCoLC)808842266.
+=856  40$yStreaming video available via the UNC-Chapel Hill Libraries$uhttp://libproxy.lib.unc.edu/login?url=http://www.aspresolver.com/aspresolver.asp?FLON;1760822$xFilmakers library online
+=907  \\$a.b74209796$b10-19-15$c06-20-13
+=998  \\$aer$aes$aul$b06-20-13$cm$dg$feng$gnyu$h0$i0
+=907  \\$a.b7420979a
+=915  \\$9Baseline 9_2013$9Under Authority Control
+=919  \\$aASPSVFLON
+=919  \\$afilmfinder
+=944  \\$aBatch load history: 109 Filmmakers Library records loaded 20130620, kms.
+=945  \\$g1$j0$lestr $nPerpetual access$on$p{dollar}0.00$q-$r-$s-$t76$u0$v0$w0$x0$y.i100287359$z06-20-13
+
