@@ -3,11 +3,11 @@ Developing shared data submission format
 
 # What is here?
 * README contains key from record number (used to name files) to brief description of the record
-.* Record number links to this record in the Endeca reference implementation -- shows result of mapping Endeca prepipeline vertical delimited format into actual Endeca data model 
+ * Record number links to this record in the Endeca reference implementation -- shows result of mapping Endeca prepipeline vertical delimited format into actual Endeca data model 
 * Files for each record (file names are based on record number):
-.* .mrc - MARC file for each record
-.* *_mrk.txt - MARCEdit Mnemonic (human readable) version of each MARC record
-.* *_end.txt - Endeca prepipeline vertical delimited format for each record
+ * .mrc - MARC file for each record
+ * *_mrk.txt - MARCEdit Mnemonic (human readable) version of each MARC record
+ * *_end.txt - Endeca prepipeline vertical delimited format for each record
 
 # Notes/caveats
 * Only the first item record (945 field) is being exported from Millennium client when I manually export records to create the .mrc and *_mrk.txt files. I will update these when I'm able to get MARC or MARC-XML happening from the backend.
