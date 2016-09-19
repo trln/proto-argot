@@ -1,0 +1,434 @@
+UniqueId||UNCb1304177
+LocalId||b1304177
+909||20110921
+Source||Catalog
+OCLCNumber||1589738
+003||OCoLC
+008PubDate||1956
+008Lang||rus
+008BookGenre||c
+015||011169559 dnb
+016||204345-2 DE-600
+016||009176614 Uk
+022||0040-361X 0040-361X z
+030||TVPRA8
+035||(OCoLC)1589738
+049||NOCC
+066||(N
+210||Teor. verojatn. primen.
+222||Teorija verojatnostej i ee primenenija
+245||Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial].
+245sort||Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial].
+260||Moskva.
+300||v. ill. 26 cm.
+310||Quarterly
+362||t. 1- 1956-
+510||Cited in: Chemical abstracts 0009-2258 -1973
+546||Tables of contents also in English, French, and German; summaries in English, French, or German.
+550||Issued by Akademi︠i︡a nauk SSSR, <1956->; by Rossiĭska︠i︡a akademi︠i︡a nauk, <199 ->
+555||Author index vols. 1-10, 1956-1965 with v. 10.
+650a||Probabilities
+650v||Periodicals
+650||seq001|Probabilities -- Periodicals.
+710a||Akademii͡a nauk SSSR.|
+710a||Rossiĭskai͡a akademii͡a nauk.|
+776||Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a
+245_Vernacular||Теория вероятностей и ее применения [serial].
+550_Vernacular||Issued by Академия наук СССР, <1956->; by Российская академия наук, <199 ->
+710a_Vernacular||Академия наук СССР.
+710a_Vernacular||Российская академия наук.
+245a_journal||
+245a_journal||Теория вероятностей и ее применения
+210_journal||Teor. verojatn. primen.
+995||UNC
+Syndetics_ISBN||seq001|UNCb1304177
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||Serial 1-1158
+ItemCallNo||Serial 1-1158
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+CallNoSort||QA 0273
+ItemCallNo||QA 0273
+999CallNo||QA273 .T4 t.38:vyp.1-2(1993)|Serial 1-1158 t.42:vyp.3-4(1997)|QA273 .T4 t.1(1956)|QA273 .T4 t.2(1957)|QA273 .T4 t.3(1958)|QA273 .T4 t.4(1959)|QA273 .T4 t.5(1960)|QA273 .T4 t.6(1961)|QA273 .T4 t.7(1962)|QA273 .T4 t.8(1963)|QA273 .T4 t.9(1964)|QA273 .T4 t.10(1965)|QA273 .T4 Index: t.1/10|QA273 .T4 t.11(1966)|QA273 .T4 t.12(1967)|QA273 .T4 t.13(1968)|QA273 .T4 t.14:vyp.1(1969)|QA273 .T4 t.14:vyp.2-4(1969)|QA273 .T4 t.15(1970)|QA273 .T4 t.16(1971)|QA273 .T4 t.17(1972)|QA273 .T4 t.18(1973)|QA273 .T4 t.19(1974)|QA273 .T4 t.20(1975)|QA273 .T4 t.21(1976)|QA273 .T4 t.22(1977)|QA273 .T4 t.23(1978)|QA273 .T4 t.24(1979)|QA273 .T4 t.25(1980)|QA273 .T4 t.26(1981)|QA273 .T4 t.27(1982)|QA273 .T4 t.28(1983)|QA273 .T4 t.29(1984)|QA273 .T4 t.30(1985)|QA273 .T4 t.31(1986)|QA273 .T4 t.32(1987)|QA273 .T4 t.33(1988)|QA273 .T4 t.34(1989)|QA273 .T4 t.35(1990)|QA273 .T4 t.36(1991)|QA273 .T4 t.37(1992)|QA273 .T4 t.38:vyp.3-4(1993)|QA273 .T4 t.39(1994)|QA273 .T4 t.40(1995)|QA273 .T4 t.41:vyp.1-2(1996)|QA273 .T4 t.41:vyp.3-4(1996)|QA273 .T4 t.42:vyp.1-2(1997)|QA273 .T4 t.42:vyp.3-4(1997)|QA273 .T4 t.43:vyp.1-2(1998)|QA273 .T4 t.43:vyp.3-4(1998)|QA273 .T4 t.44:vyp.1-2(1999)|QA273 .T4 t.44:vyp.3-4(1999)|QA273 .T4 t.45:vyp.1-2(2000)|QA273 .T4 t.45:vyp.3-4(2000)|QA273 .T4 t.46(2001)|QA273 .T4 t.47(2002)|QA273 .T4 t.48(2003)|QA273 .T4 t.49(2004)|QA273 .T4 t.50(2005)|QA273 .T4 t.51(2006)|QA273 .T4 t.52:vyp.1-3(2007)|QA273 .T4 t.52:vyp.4(2007)|QA273 .T4 t.53(2008)|QA273 .T4 t.54:vyp.1(2009)|QA273 .T4 t.54:vyp.2(2009)|QA273 .T4 t.54:vyp.3(2009)|QA273 .T4 t.54:vyp.4(2009)|QA273 .T4 t.55:vyp.1(2010)|QA273 .T4 t.55:vyp.2(2010)|QA273 .T4 t.55:vyp.3(2010)|QA273 .T4 t.55:vyp.4(2010)|QA273 .T4 t.56:vyp.1(2011)|QA273 .T4 t.56:vyp.2(2011)|QA273 .T4 t.56:vyp.3(2011)|QA273 .T4 t.56:vyp.4(2011)|
+999Class||LC||LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|LC|
+999Loc||dhca|dgdae|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|trln|
+999Status_orig||Missing|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|Available|
+999Status||Missing
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999Status||Available
+999ItemDueDate|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+999Lib_orig||dh|dg|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|
+999Lib||dh
+999Lib||dg
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Lib||ls
+999Circ||0
+999ItemType_orig||Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|Journal|
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Journal
+999ItemType||Serial
+999Barcode||i6852574|i1618188|i9213799|i9169339|i9169340|i9169341|i9169342|i9169343|i9169344|i9169345|i9169346|i9169347|i9213837|i9169348|i9169349|i9169350|i9213836|i9169351|i9169352|i9169353|i9169354|i9169355|i9169356|i9169357|i9169358|i9169359|i9169360|i9169361|i9169362|i9169363|i9169364|i9169365|i9169366|i9169367|i9169368|i9169369|i9169370|i9169371|i9169372|i9169373|i9169374|i9169375|i9169376|i9169377|i9169381|i9169386|i9169382|i9169387|i9169383|i9169388|i9169384|i9169389|i9169385|i9169390|i9169405|i9169406|i9169407|i9169408|i9169409|i6852577|i7881436|i8171485|i8171487|i9188949|i9188953|i9188955|i9195442|i9394772|i9394773|i9394774|i9394775|i10076510|i10076511|i10076512|i10076513|
+999ItemNote|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+866HoldingsNote||dg|dgdae| Serial 1-1158| v. 42 3-4 (1997)||| Library also has some holdings in printed form.|
+866HoldingsNote||ls|trln| QA273 .T4| v. 1-37 (1956-1992) v. 38-56 3-4 (1964-2011)||Index:  1/10||c2788358
+Rollup||001589738
+REC
