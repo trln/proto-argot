@@ -1,0 +1,78 @@
+{
+  "id": "UNCb1304177",
+  "local_id": "b1304177",
+  "date_cataloged": "2011-09-21",
+  "oclc_num": "1589738",
+  "pub_date": "1956-01-01",
+  "lang": "rus",
+  "genre": "c",
+  "circ": "0",
+  "syndetics_isbn": "seq001|UNCb1304177",
+  "title": {
+    "main":{
+      "lang":"en",
+      "value":"Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial]."
+    },
+    "vernacular":{
+      "lang":"rus",
+      "value":"Теория вероятностей и ее применения [serial]"
+    },
+    "journal":{
+      "abbr": {
+        "lang": "en",
+        "value": "Teor. verojatn. primen."
+      },
+      "index":{
+        "lang":"rus",
+        "value": "Теория вероятностей и ее применения",
+        "normalized": "Teoria veroatnostej i ee primenenia"
+      }
+    },
+    "sort":"Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial]."
+  },
+  "authors": {
+    "main": [
+      {
+        "name": "Akademii͡a nauk SSSR."
+      },
+      {
+        "name": "Rossiĭskai͡a akademii͡a nauk."
+      }
+    ],
+    "other": [
+      {
+        "name": "Академия наук СССР."
+      },
+      {
+        "name": "Российская академия наук."
+      }
+    ]
+  },
+  "call_no": {
+    "sort": [
+      "QA273",
+      "Serial 1-1158"
+    ]
+  },
+  "class_schemes":[
+    "LC"
+  ],
+  "cumulative_indexes":[
+    "Author index vols. 1-10, 1956-1965 with v. 10."
+  ],
+  "frequency":[
+    "Quarterly"
+  ],
+  "imprint":"Moskva.",
+  "material":"v. ill. 26 cm.",
+  "notes":[
+    "Cited in: Chemical abstracts 0009-2258 -1973",
+    "Issued by Академия наук СССР, <1956->; by Российская академия наук, <199 ->",
+    "Tables of contents also in English, French, and German; summaries in English, French, or German."
+
+  ],
+  "holdings_summary":[
+    "dg|dgdae| Serial 1-1158| v. 42 3-4 (1997)||| Library also has some holdings in printed form.|",
+    "ls|trln| QA273 .T4| v. 1-37 (1956-1992) v. 38-56 3-4 (1964-2011)||Index:  1/10||c2788358"
+  ]
+}
