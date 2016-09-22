@@ -1,0 +1,248 @@
+
+{
+  // Unique ID, includes information about owning institution
+  "id":"",
+
+  // ISO 8601 dates
+  "publication_date": {
+    "008":"",
+    "260":"",
+    "264":""
+  },
+
+  // Array of ISBNs, [020] & [024]
+  "isbn":[],
+
+  // Array of ISSNs, [022]
+  "issn":[],
+
+  // ID to use for syndetics data [020] or [024] or UPC?
+  "syndetics_id": "",
+
+  // Publisher Information
+  "publisher":{
+    // ID for the publisher [028]
+    "number":"",
+    // Array of publisher names information from [260],[264]
+    "name": [
+      //example
+      {
+        "main":"",
+        "vernacular":{
+          "lang": "",
+          "value": ""
+        }
+      }
+    ]
+  },
+
+  // Array of Imprints [260],[264], (including sound recordings)
+  "imprint":[
+    // example
+    {
+      "main":"",
+      "vernacular":{
+        "lang": "",
+        "value": ""
+      }
+    }
+  ],
+
+  // Other RDA Publisher Elements (could be nested)
+  "production_statement":"",
+  "producer":"",
+  "distribution_statement":"",
+  "distributor":"",
+  "manufacturer_statement":"",
+  "manufacturer":"",
+  "copyright_statement":"",
+  "copyright":"",
+
+
+  // Authors
+  "authors": {
+    // Array of authors from [100],[110],[111]
+    "main": [
+      // example
+      {
+        "name": {
+          // Normalized/Romanized version of Name?
+          "main": "",
+          // Vernacular version of name
+          "vernacular": {
+            // Language Code
+            "lang": "",
+            // Name
+            "value": ""
+          }
+        }
+      }
+    ],
+
+    // Array of other authors from [700],[710],[711]
+    "other": [],
+
+    // Director from [700]
+    "director":[],
+
+    // Uncontrolled from [720]
+    "uncontrolled":[]
+  },
+
+  // Title information
+  "title":{
+    // Main title (normalized/romanized) [130,240,245]
+    "main": "",
+    // Sort version of main title
+    "sort": "",
+    // Vernacular of main
+    "vernacular": {
+      // Language Code
+      "lang": "",
+      // Name
+      "value": ""
+    },
+    // Main Journal Title [130],[240],[245]
+    "journal": "",
+    "journal_vernacular":{
+      "lang": "",
+      "value": ""
+    },
+    // [210]
+    "abbreviation": "",
+    "abbreviation_vernacular": {
+      "lang": "",
+      "value": ""
+    },
+    // Array of Translations [242]
+    "translation":[
+      //example
+      {
+        "main":"",
+        "vernacular":{
+          "lang":"",
+          "value":""
+        }
+      }
+    ],
+    // Array of Alternate Titles [246],[247],[730],[740]
+    "alternate":[
+      //example
+      {
+        "main":"",
+        "vernacular":{
+          "lang":"",
+          "value":""
+        }
+      }
+    ]
+
+  },
+
+  // Statement of responsibility
+  "statement_of_responsibility":{
+    "main": "",
+    "vernacular":{
+      "lang":"",
+      "value":""
+    }
+  },
+
+  // Edition
+  "edition":{
+    "main":"",
+    "vernacular":{
+      "lang":"",
+      "value":""
+    }
+  },
+
+  // Array of [255] entries
+  "cartographic_data":[],
+
+  // Frequency
+  "frequency":{
+    // [310]
+    "current":"",
+    // [321]
+    "former":[]
+  },
+
+  // Description
+  "description": {
+    // [344]
+    "sound": [],
+    // [345]
+    "projection": [],
+    // [346]
+    "video": [],
+    // [347]
+    "digital_file": []
+  },
+  // Organization [351]
+  "organization":[],
+  // Volume / Date Ranges [362]
+  "volumes": [],
+
+  // Array of series objects [440],[490]
+  "series":[
+    // example
+    {
+      "main":"",
+      "vernacular":{
+        "lang":"",
+        "value":""
+      },
+      "issn":""
+    }
+  ],
+
+
+  "notes": {
+    // Array of indexed notes [500],[501],[502],[504],[505],[507],[522],[533],[534],[536],[541],[561],[581],[585],[586]
+    // [590]
+    // (do we need vernacular here?)
+    "indexed":[],
+
+    // Array of additional notes [510],[513],[514],[515],[516],[518],[521],[524],[525],[533],[535]
+    // [540],[546],[547],[550],[555],[556],[565],[567],[580],[588],[590],[752]
+    "additional":[]
+  },
+
+  // Access Restriction [506]
+  "access_restriction":[],
+
+  // Production Credits [508]
+  "production_credits":[],
+
+  // Performer Credits [511]
+  "performerc_credits":[],
+
+  // Summary [520]
+  "summary": [],
+
+  // Formats
+  "format": {
+    // [530]
+    "other":[]
+  },
+
+  // Source of Acquisition [541]
+  "source_of_acquisition":[],
+
+  // Related Collections [544]
+  "related_collections":[],
+
+  // Biographical Sketch [545]
+  "biographical_sketch":[],
+
+  // Most Recently Arrived [599]
+  "most_recent":[],
+
+  // Array of Subjects [600],[610],[611],[630],[650],[651],[653],[655],[690],[691],[695]
+  "subjects":[],
+
+
+
+
+}
