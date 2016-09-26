@@ -1,7 +1,15 @@
 
 {
-  // Unique ID, includes information about owning institution
-  "id":"",
+  "id":{
+    "primary":"",
+    "rollup":"",
+    "oclc":"",
+    "ead":"",
+    "local":{
+      "primary":"",
+      "other":[]
+    }
+  },
 
   // ISO 8601 dates
   "publication_date": {
@@ -125,7 +133,8 @@
         }
       }
     ],
-    // Array of Alternate Titles [246],[247],[730],[740]
+    // Array of Alternate Titles [246],[247],[730],[740],[780],[785]
+    // alternate encompasses earlier/later...is distinction necessary for indexing?
     "alternate":[
       //example
       {
@@ -197,6 +206,16 @@
     }
   ],
 
+  // Series (what is the difference between 400 series and 800 series?)
+  "800_series":{
+    // 800
+    "personal": [],
+    "corporate": [],
+    "meeting": [],
+    "uniform": []
+  },
+
+
 
   "notes": {
     // Array of indexed notes [500],[501],[502],[504],[505],[507],[522],[533],[534],[536],[541],[561],[581],[585],[586]
@@ -206,7 +225,10 @@
 
     // Array of additional notes [510],[513],[514],[515],[516],[518],[521],[524],[525],[533],[535]
     // [540],[546],[547],[550],[555],[556],[565],[567],[580],[588],[590],[752]
-    "additional":[]
+    "additional":[],
+
+    // [863],[866]
+    "serials_summary": []
   },
 
   // Access Restriction [506]
@@ -242,7 +264,80 @@
   // Array of Subjects [600],[610],[611],[630],[650],[651],[653],[655],[690],[691],[695]
   "subjects":[],
 
+  //field linking
+  "linking":{
+    // [760]
+    "main_series":[],
+    // [762]
+    "subseries": [],
+    // [765]
+    "translation_of": [
+      {
+        "title":"",
+        "issn":""
+      }
+    ],
+    // [767]
+    "translated_as": [
+      {
+        "title":"",
+        "issn":""
+      }
+    ],
+    // [770]
+    "has_supplement": [],
+    // [772]
+    "supplement_to": [],
+    // [773]
+    "host_item": [
+      {
+        "title":"",
+        "issn":""
+      }
+    ],
+    // [773]
+    "constituent_unit": [
+      {
+        "title":"",
+        "issn":""
+      }
+    ],
+    // [790],[791]
+    "local_added":[]
+  },
 
+  // [7xx] (unique to UNC), not sure of function
+  "name_title": [],
 
+  // [852] (unique to Duke)
+  "holdings_note": [],
 
+  // [856]
+  "urls":[
+    {
+      "rel":"",
+      "href":""
+    }
+  ],
+
+  // [909]
+  "cataloged_date":"",
+
+  // items (assuming we index items, this indicates the array of item_objects
+  "items":[
+    // example
+    {
+      "id":"",
+      "call_no":"",
+      "circ_level":"",
+      "doc_type":"",
+      "due_date":"",
+      "notes":[],
+      "types":[],
+      "libraries":[],
+      "locations":[],
+      "statuses":[],
+      "schemes":[]
+    }
+  ]
 }
