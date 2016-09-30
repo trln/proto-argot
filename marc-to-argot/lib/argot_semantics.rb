@@ -4,13 +4,13 @@ require 'traject/marc_extractor'
 
 module Traject::Macros
 
-  module ArgonSemantics
+  module ArgotSemantics
     # shortcut
     MarcExtractor = Traject::MarcExtractor
 
-    def argon_title_object
+    def argot_title_object
         lambda do |record,accumulator|
-            st = ArgonSemantics.get_title_object(record)
+            st = ArgotSemantics.get_title_object(record)
             accumulator << st if st
         end
     end
@@ -20,7 +20,7 @@ module Traject::Macros
             :sort => Marc21Semantics.get_sortable_title(record)
         }
 
-        vernacular_bag = ArgonSemantics.create_vernacular_bag(record,extract_fields)
+        vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
 
         Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).collect_matching_lines(record) do |field, spec, extractor|
             str = extractor.collect_subfields(field,spec).first

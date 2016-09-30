@@ -16,8 +16,8 @@ extend  Traject::Macros::Marc21Semantics
 require 'traject/macros/marc_format_classifier'
 extend Traject::Macros::MarcFormats
 
-require 'argon_semantics'
-extend Traject::Macros::ArgonSemantics
+require 'argot_semantics'
+extend Traject::Macros::ArgotSemantics
 
 # In this case for simplicity we provide all our settings, including
 # solr connection details, in this one file. But you could choose
@@ -26,7 +26,7 @@ extend Traject::Macros::ArgonSemantics
 # config files as you like, `traject -c one.rb -c two.rb -c etc.rb`
 settings do
   provide "writer_class_name", "Traject::JsonWriter"
-  provide "output_file", "argon_out.json"
+  provide "output_file", "argot_out.json"
   provide 'processing_thread_pool', 3
 end
 
@@ -35,6 +35,6 @@ to_field "id", extract_marc("001", :first => true) do |marc_record, accumulator,
   accumulator.collect! {|s| "bib_#{s}"}
 end
 
-to_field "title", argon_title_object
+to_field "title", argot_title_object
 
 
