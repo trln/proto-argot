@@ -33,4 +33,14 @@ end
 
 to_field "title", argot_title_object("245abnp:210ab:130adfghklmnoprs:242abhnp:246abhnp:247abhnp:730adfghklmnoprst:740ahnp:780abcdghnkstxz:785abcdghikmnstxz")
 
+to_field "publication_year", marc_publication_date
 
+######
+# ISBN / ISSN
+#####
+to_field "isbn", extract_marc("020az:024a")
+to_field "syndetics_isbn", extract_marc("020a")
+to_field "issn", extract_marc("022ayz")
+
+
+to_field "publisher", argot_publisher_object

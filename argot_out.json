@@ -5,6 +5,9 @@
   "source": [
     "UNC"
   ],
+  "local_id": [
+    "b74209796"
+  ],
   "title": [
     {
       "sort": "Soul & science the power of the mind",
@@ -13,6 +16,18 @@
         "marc": "245",
         "vernacular": null
       }
+    }
+  ],
+  "publication_year": [
+    2012
+  ],
+  "publisher": [
+    {
+      "number": "",
+      "name": "Filmakers Library,",
+      "imprint": "New York, NY : Filmakers Library, 2012.",
+      "vernacular": "",
+      "marc_source": "260"
     }
   ]
 }

@@ -8,6 +8,9 @@ module Traject::Macros
         # shortcut
         MarcExtractor = Traject::MarcExtractor
 
+        ######
+        # Lambda for Title
+        ######
         def argot_title_object(spec)
             lambda do |record,accumulator|
                 st = ArgotSemantics.get_title_object(record,spec)
@@ -15,6 +18,19 @@ module Traject::Macros
             end
         end
 
+        ######
+        # Lambda for Publisher
+        ######
+        def argot_publisher_object
+            lambda do |record,accumulator|
+                st = ArgotSemantics.get_publisher_object(record)
+                accumulator << st if st
+            end
+        end
+
+        ######
+        # Extract a marc string from a set of marc subfields
+        ######
         def self.trim_marc_string(extractor, field, spec)
             str = extractor.collect_subfields(field,spec).first
             non_filing = field.indicator2.to_i
@@ -23,6 +39,9 @@ module Traject::Macros
             str
         end
 
+        ######
+        # Create a nested title object
+        ######
         def self.get_title_object(record,extract_fields = "245")
             titleobject = {
                 :sort => Marc21Semantics.get_sortable_title(record)
@@ -30,7 +49,7 @@ module Traject::Macros
 
             vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
 
-            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).collect_matching_lines(record) do |field, spec, extractor|
+            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
                 str = ArgotSemantics.trim_marc_string(extractor, field, spec)
 
                 marc_match_suffix = ''
@@ -80,6 +99,100 @@ module Traject::Macros
             titleobject
         end
 
+        ######
+        # Create a nested publisher object
+        ######
+        def self.get_publisher_object(record)
+
+            publisher = {
+                :number => '',
+                :name => '',
+                :imprint => '',
+                :vernacular => '',
+                :marc_source => '',
+            }
+
+            number = Traject::MarcExtractor.cached('264b', :alternate_script => false, :first => true).extract(record)
+            if !number.empty?
+                publisher[:number] = number.join("")
+            end
+
+
+            vernacular_bag = ArgotSemantics.create_vernacular_bag(record,"260:264")
+
+            marc_match_suffix = ''
+            name = []
+            imprint = []
+
+            Traject::MarcExtractor.cached('264b', :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
+
+                if field.indicator2 == 1
+                    field.subfields.each do |subfield|
+                        if subfield.code == '6'
+                            marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                        end
+
+                        if subfield.code == 'b'
+                            publisher << subfield.value
+                        end
+
+                        if ['a','b','c'].include?(subfield.code)
+                            imprint << subfield.value
+                        end
+                    end
+
+                    vernacular = vernacular_bag[field.tag + marc_match_suffix];
+                    if vernacular
+                        publisher[:vernacular] = vernacular
+                    end
+
+                    if imprint != ''
+                        publisher[name] = name.join(" ")
+                        publisher[imprint] = imprint.join(" ")
+                        publisher[marc_source] = '264'
+                    end
+                end
+            end
+
+            if publisher[:imprint] == ''
+
+                Traject::MarcExtractor.cached('260', :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
+
+                    field.subfields.each do |subfield|
+                        if subfield.code == '6'
+                            marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                        end
+
+                        if subfield.code == 'b' || subfield.code == 'f'
+                            name << subfield.value
+                        end
+
+                        if ['a','b','c','e','f','g'].include?(subfield.code)
+                            imprint << subfield.value
+                        end
+                    end
+
+                    vernacular = vernacular_bag[field.tag + marc_match_suffix];
+                    if vernacular
+                        publisher[:vernacular] = vernacular
+                    end
+
+                    if imprint != ''
+                        publisher[:name] = name.join(" ")
+                        publisher[:imprint] = imprint.join(" ")
+                        publisher[:marc_source] = '260'
+                    end
+
+                end
+            end
+
+            publisher
+        end
+
+
+        ######
+        # Create a bag of vernacular strings to pair with other marc fields
+        ######
         def self.create_vernacular_bag(record, extract_fields)
             vernacular_bag = {}
 
