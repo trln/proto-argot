@@ -2,7 +2,10 @@
 [Traject](https://github.com/traject/traject)
 
 Run command 
-```traject -c marc-to-argot/argot.rb b1304177.mrc ```
+```traject -c marc-to-argot/argot.rb <marc-file>```
+
+Optionally, add in an institutional config
+```traject -c marc-to-argot/argot.rb -c marc-to-argot/<inst>.rb <marc-file>```
 
 Note:
 This was a first attempt at getting vernacular to play nice. Essentially,

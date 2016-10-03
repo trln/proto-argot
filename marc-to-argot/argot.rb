@@ -28,13 +28,9 @@ settings do
   provide "writer_class_name", "Traject::JsonWriter"
   provide "output_file", "argot_out.json"
   provide 'processing_thread_pool', 3
+  provide "json_writer.pretty_print", true
 end
 
-# Extract first 001, then supply code block to add "bib_" prefix to it
-to_field "id", extract_marc("001", :first => true) do |marc_record, accumulator, context|
-  accumulator.collect! {|s| "bib_#{s}"}
-end
-
-to_field "title", argot_title_object
+to_field "title", argot_title_object("245abnp:210ab:130adfghklmnoprs:242abhnp:246abhnp:247abhnp:730adfghklmnoprst:740ahnp:780abcdghnkstxz:785abcdghikmnstxz")
 
 

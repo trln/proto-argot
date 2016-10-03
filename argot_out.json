@@ -1,1 +1,18 @@
-{"id":["bib_ocm01589738"],"title":[{"sort":"Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a","abbrv":{"value":"Teor. verojatn. primen","marc":"210","vernacular":null},"main":{"value":"Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a","marc":"245","vernacular":{"lang":"/(N","value":"Теория вероятностей и ее применения"}}}]}
+{
+  "id": [
+    "UNC74209796"
+  ],
+  "source": [
+    "UNC"
+  ],
+  "title": [
+    {
+      "sort": "Soul & science the power of the mind",
+      "main": {
+        "value": "Soul & science the power of the mind",
+        "marc": "245",
+        "vernacular": null
+      }
+    }
+  ]
+}
