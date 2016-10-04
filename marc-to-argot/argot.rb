@@ -35,6 +35,8 @@ to_field "title", argot_title_object("245abnp:210ab:130adfghklmnoprs:242abhnp:24
 
 to_field "publication_year", marc_publication_date
 
+to_field "authors", argot_get_authors("100abcdegq:110abcdefgn:111abcdefngq:700abcdeq:710abcde:711abcdeq:720a")
+
 ######
 # ISBN / ISSN
 #####

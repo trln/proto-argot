@@ -29,6 +29,16 @@ module Traject::Macros
         end
 
         ######
+        # Lambda for Authors
+        ######
+        def argot_get_authors(spec)
+            lambda do |record,accumulator|
+                st = ArgotSemantics.get_authors(record,spec)
+                accumulator << st if st
+            end
+        end
+
+        ######
         # Extract a marc string from a set of marc subfields
         ######
         def self.trim_marc_string(extractor, field, spec)
@@ -39,7 +49,7 @@ module Traject::Macros
             str
         end
 
-        ######
+        ################################################
         # Create a nested title object
         ######
         def self.get_title_object(record,extract_fields = "245")
@@ -99,7 +109,79 @@ module Traject::Macros
             titleobject
         end
 
+
+        ################################################
+        # Create a nested authors object
         ######
+        def self.get_authors(record,extract_fields = "100")
+             authors = {
+                :sort => Marc21Semantics.get_sortable_author(record),
+                :main => [],
+                :director => [],
+                :other => [],
+                :uncontrolled => [],
+            }
+
+            vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
+
+            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
+                str = ArgotSemantics.trim_marc_string(extractor, field, spec)
+
+                marc_match_suffix = ''
+                has_director = false
+
+                field.subfields.each do |subfield|
+                    if subfield.code == '6'
+                        marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                    end
+                    if subfield.code == '4' && subfield.value == 'drt'
+                        has_director = true
+                    end
+                end
+
+                vernacular = vernacular_bag[field.tag + marc_match_suffix]
+
+                if has_director
+                    authors[:director] << {
+                        :name => str,
+                        :vernacular => vernacular,
+                        :marc_source => field.tag
+                    }
+                end
+
+                if field.tag.to_i < 700
+                    authors[:main] << {
+                        :name => str,
+                        :vernacular => vernacular,
+                        :marc_source => field.tag
+                    }
+                elsif field.tag == '720'
+                    authors[:uncontrolled] << {
+                        :name => str,
+                        :vernacular => vernacular,
+                        :marc_source => field.tag
+                    }
+                else
+                    authors[:other] << {
+                        :name => str,
+                        :vernacular => vernacular,
+                        :marc_source => field.tag
+                    }
+                end
+            end
+
+            #cleanup
+            authors.each do |k,v|
+                if v.empty?
+                    authors.delete(k)
+                end
+            end
+
+            authors
+        end
+
+
+        ##########################################
         # Create a nested publisher object
         ######
         def self.get_publisher_object(record)

@@ -1,31 +1,65 @@
 {
   "id": [
-    "UNC74209796"
+    "UNC13041770"
   ],
   "source": [
     "UNC"
   ],
   "local_id": [
-    "b74209796"
+    "b13041770"
   ],
   "title": [
     {
-      "sort": "Soul & science the power of the mind",
-      "main": {
-        "value": "Soul & science the power of the mind",
-        "marc": "245",
+      "sort": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
+      "abbrv": {
+        "value": "Teor. verojatn. primen",
+        "marc": "210",
         "vernacular": null
+      },
+      "main": {
+        "value": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
+        "marc": "245",
+        "vernacular": {
+          "lang": "/(N",
+          "value": "Теория вероятностей и ее применения"
+        }
       }
     }
   ],
   "publication_year": [
-    2012
+    1956
+  ],
+  "authors": [
+    {
+      "sort": "880-01 Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial].",
+      "other": [
+        {
+          "name": "Akademii͡a nauk SSSR",
+          "vernacular": {
+            "lang": "/(N",
+            "value": "Академия наук СССР."
+          },
+          "marc_source": "710"
+        },
+        {
+          "name": "Rossiĭskai͡a akademii͡a nauk",
+          "vernacular": {
+            "lang": "/(N",
+            "value": "Российская академия наук."
+          },
+          "marc_source": "710"
+        }
+      ]
+    }
+  ],
+  "issn": [
+    "0040-361X"
   ],
   "publisher": [
     {
       "number": "",
-      "name": "Filmakers Library,",
-      "imprint": "New York, NY : Filmakers Library, 2012.",
+      "name": "",
+      "imprint": "Moskva.",
       "vernacular": "",
       "marc_source": "260"
     }
