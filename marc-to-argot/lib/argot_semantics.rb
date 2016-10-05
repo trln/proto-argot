@@ -8,7 +8,7 @@ module Traject::Macros
         # shortcut
         MarcExtractor = Traject::MarcExtractor
 
-        ######
+        ################################################
         # Lambda for Title
         ######
         def argot_title_object(spec)
@@ -16,37 +16,6 @@ module Traject::Macros
                 st = ArgotSemantics.get_title_object(record,spec)
                 accumulator << st if st
             end
-        end
-
-        ######
-        # Lambda for Publisher
-        ######
-        def argot_publisher_object
-            lambda do |record,accumulator|
-                st = ArgotSemantics.get_publisher_object(record)
-                accumulator << st if st
-            end
-        end
-
-        ######
-        # Lambda for Authors
-        ######
-        def argot_get_authors(spec)
-            lambda do |record,accumulator|
-                st = ArgotSemantics.get_authors(record,spec)
-                accumulator << st if st
-            end
-        end
-
-        ######
-        # Extract a marc string from a set of marc subfields
-        ######
-        def self.trim_marc_string(extractor, field, spec)
-            str = extractor.collect_subfields(field,spec).first
-            non_filing = field.indicator2.to_i
-            str = str.slice(non_filing, str.length)
-            str = Marc21.trim_punctuation(str)
-            str
         end
 
         ################################################
@@ -60,7 +29,7 @@ module Traject::Macros
             vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
 
             Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
-                str = ArgotSemantics.trim_marc_string(extractor, field, spec)
+                str = extractor.collect_subfields(field, spec).first
 
                 marc_match_suffix = ''
 
@@ -111,6 +80,16 @@ module Traject::Macros
 
 
         ################################################
+        # Lambda for Authors
+        ######
+        def argot_get_authors(spec)
+            lambda do |record,accumulator|
+                st = ArgotSemantics.get_authors(record,spec)
+                accumulator << st if st
+            end
+        end
+
+        ################################################
         # Create a nested authors object
         ######
         def self.get_authors(record,extract_fields = "100")
@@ -125,7 +104,7 @@ module Traject::Macros
             vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
 
             Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
-                str = ArgotSemantics.trim_marc_string(extractor, field, spec)
+                str = extractor.collect_subfields(field, spec).first
 
                 marc_match_suffix = ''
                 has_director = false
@@ -180,6 +159,15 @@ module Traject::Macros
             authors
         end
 
+        ################################################
+        # Lambda for Publisher
+        ######
+        def argot_publisher_object
+            lambda do |record,accumulator|
+                st = ArgotSemantics.get_publisher_object(record)
+                accumulator << st if st
+            end
+        end
 
         ##########################################
         # Create a nested publisher object
@@ -271,8 +259,103 @@ module Traject::Macros
             publisher
         end
 
-
+        ################################################
+        # Lambda for Series
         ######
+        def argot_series(spec)
+            lambda do |record,accumulator|
+                st = ArgotSemantics.get_series(record,spec)
+                accumulator << st if st
+            end
+        end
+
+        ################################################
+        # Create a series object
+        ######
+        def self.get_series(record,extract_fields)
+            series = {}
+
+            vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
+
+            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
+                str = extractor.collect_subfields(field,spec).first
+
+                marc_match_suffix = ''
+
+                field.subfields.each do |subfield|
+                    if subfield.code == '6'
+                        marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                    end
+                    if subfield.code == 'x'
+                        case field.tag
+                            when 440
+                                series[:issn] = subfield.value
+                            when 490
+                                if field.indicator1 == '0'
+                                    series[:issn] = subfield.value
+                                end
+                            else
+                        end
+                    end
+                end
+
+                vernacular = vernacular_bag[field.tag + marc_match_suffix]
+
+                series[:value] = str
+                series[:vernacular] = vernacular
+            end
+
+            if series.empty?
+                nil
+            else
+                series
+            end
+        end
+
+        ################################################
+        # Lambda for Generic Vernacular Object
+        ######
+        def argot_gvo(spec)
+            lambda do |record,accumulator|
+                st = ArgotSemantics.get_gvo(record,spec)
+                accumulator << st if st
+            end
+        end
+
+        ################################################
+        # Create a generic vernacular object
+        ######
+        def self.get_gvo(record,extract_fields)
+            gvo = {}
+
+            vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
+
+            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
+                str = extractor.collect_subfields(field,spec).first
+
+                marc_match_suffix = ''
+
+                field.subfields.each do |subfield|
+                    if subfield.code == '6'
+                        marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                    end
+                end
+
+                vernacular = vernacular_bag[field.tag + marc_match_suffix]
+
+                gvo[:value] = str
+                gvo[:vernacular] = vernacular
+            end
+
+            if gvo.empty?
+                nil
+            else
+                gvo
+            end
+        end
+
+
+        ################################################
         # Create a bag of vernacular strings to pair with other marc fields
         ######
         def self.create_vernacular_bag(record, extract_fields)
@@ -280,7 +363,7 @@ module Traject::Macros
 
             Traject::MarcExtractor.cached(extract_fields, :alternate_script => :only).collect_matching_lines(record) do |field, spec, extractor|
 
-                str = ArgotSemantics.trim_marc_string(extractor, field, spec)
+                str = extractor.collect_subfields(field, spec).first
 
                 field.subfields.each do |subfield|
                     if subfield.code == '6'

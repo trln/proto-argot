@@ -12,7 +12,7 @@
     {
       "sort": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
       "abbrv": {
-        "value": "Teor. verojatn. primen",
+        "value": "Teor. verojatn. primen.",
         "marc": "210",
         "vernacular": null
       },
@@ -26,6 +26,15 @@
       }
     }
   ],
+  "statement_of_responsibility": [
+    {
+      "value": null,
+      "vernacular": {
+        "lang": "/(N",
+        "value": null
+      }
+    }
+  ],
   "publication_year": [
     1956
   ],
@@ -34,7 +43,7 @@
       "sort": "880-01 Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial].",
       "other": [
         {
-          "name": "Akademii͡a nauk SSSR",
+          "name": "Akademii͡a nauk SSSR.",
           "vernacular": {
             "lang": "/(N",
             "value": "Академия наук СССР."
@@ -42,7 +51,7 @@
           "marc_source": "710"
         },
         {
-          "name": "Rossiĭskai͡a akademii͡a nauk",
+          "name": "Rossiĭskai͡a akademii͡a nauk.",
           "vernacular": {
             "lang": "/(N",
             "value": "Российская академия наук."

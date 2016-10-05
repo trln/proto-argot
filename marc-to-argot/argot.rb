@@ -33,16 +33,38 @@ end
 
 to_field "title", argot_title_object("245abnp:210ab:130adfghklmnoprs:242abhnp:246abhnp:247abhnp:730adfghklmnoprst:740ahnp:780abcdghnkstxz:785abcdghikmnstxz")
 
+to_field "statement_of_responsibility", argot_gvo("245c")
+to_field "edition", argot_gvo("250ab")
+
 to_field "publication_year", marc_publication_date
 
 to_field "authors", argot_get_authors("100abcdegq:110abcdefgn:111abcdefngq:700abcdeq:710abcde:711abcdeq:720a")
 
 ######
-# ISBN / ISSN
+# Series
+######
+to_field "series", argot_series("440anpvx")
+to_field "series", argot_series("490avx")
+
+######
+# ISBN / ISSN / UPC
 #####
 to_field "isbn", extract_marc("020az:024a")
 to_field "syndetics_isbn", extract_marc("020a")
 to_field "issn", extract_marc("022ayz")
+to_field "upc" do |record, acc|
+    Traject::MarcExtractor.cached("024a").each_matching_line(record) do |field, spec, extractor|
+        if field.indicator1 == '1'
+            acc << extractor.collect_subfields(field,spec).first
+        end
+    end
+end
 
 
 to_field "publisher", argot_publisher_object
+
+
+######
+# MISC
+######
+to_field "cartographic_data", extract_marc("255abcdefg")
