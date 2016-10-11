@@ -354,10 +354,27 @@ module Traject::Macros
                 field.subfields.each do |subfield|
                     if subfield.code == '6'
                         index_of_slash = subfield.value.rindex("/")
-                        lang_code = subfield.value[index_of_slash..-1] if index_of_slash
-                        marc_match = subfield.value[0..(index_of_slash-1)] if index_of_slash
+                        lang_code = subfield.value[index_of_slash + 1..-1] if index_of_slash
+                        marc_match = subfield.value[0..index_of_slash - 1] if index_of_slash
+
+                        case (lang_code)
+                            when "(3"
+                                lang = "ara"
+                            when "(B"
+                                lang = "lat"
+                            when "$1"
+                                lang = "cjk"
+                            when "(N"
+                                lang = "rus"
+                            when "(S"
+                                lang = "gre"
+                            when "(2"
+                                lang = "heb"
+                        end
+
+
                         vernacular_bag[marc_match] = {
-                            :lang => lang_code,
+                            :lang => lang,
                             :value => str
                         }
                     end

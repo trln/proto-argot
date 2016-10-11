@@ -20,7 +20,7 @@
         "value": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
         "marc": "245",
         "vernacular": {
-          "lang": "/(N",
+          "lang": "rus",
           "value": "Теория вероятностей и ее применения"
         }
       }
@@ -31,7 +31,7 @@
       "value": null,
       "marc": "245",
       "vernacular": {
-        "lang": "/(N",
+        "lang": "rus",
         "value": null
       }
     }
@@ -46,7 +46,7 @@
         {
           "name": "Akademii͡a nauk SSSR.",
           "vernacular": {
-            "lang": "/(N",
+            "lang": "rus",
             "value": "Академия наук СССР."
           },
           "marc_source": "710"
@@ -54,7 +54,7 @@
         {
           "name": "Rossiĭskai͡a akademii͡a nauk.",
           "vernacular": {
-            "lang": "/(N",
+            "lang": "rus",
             "value": "Российская академия наук."
           },
           "marc_source": "710"
@@ -75,7 +75,7 @@
       "value": "Issued by Akademi︠i︡a nauk SSSR, <1956->; by Rossiĭska︠i︡a akademi︠i︡a nauk, <199 ->",
       "marc": "550",
       "vernacular": {
-        "lang": "/(N",
+        "lang": "rus",
         "value": "Issued by Академия наук СССР, <1956->; by Российская академия наук, <199 ->"
       }
     },
