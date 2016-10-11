@@ -262,95 +262,81 @@ module Traject::Macros
         ################################################
         # Lambda for Series
         ######
-        def argot_series(spec)
+        def argot_series(extract_fields)
             lambda do |record,accumulator|
-                st = ArgotSemantics.get_series(record,spec)
-                accumulator << st if st
-            end
-        end
+                vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
 
-        ################################################
-        # Create a series object
-        ######
-        def self.get_series(record,extract_fields)
-            series = {}
+                Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
 
-            vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
+                    series = {}
+                    series_issn = nil
 
-            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
-                str = extractor.collect_subfields(field,spec).first
+                    str = extractor.collect_subfields(field,spec).first
 
-                marc_match_suffix = ''
+                    marc_match_suffix = ''
 
-                field.subfields.each do |subfield|
-                    if subfield.code == '6'
-                        marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
-                    end
-                    if subfield.code == 'x'
-                        case field.tag
-                            when 440
-                                series[:issn] = subfield.value
-                            when 490
-                                if field.indicator1 == '0'
-                                    series[:issn] = subfield.value
-                                end
-                            else
+                    field.subfields.each do |subfield|
+                        if subfield.code == '6'
+                            marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                        end
+                        if subfield.code == 'x'
+                            case field.tag
+                                when 440
+                                    series_issn = subfield.value
+                                when 490
+                                    if field.indicator1 == '0'
+                                        series_issn = subfield.value
+                                    end
+                                else
+                            end
                         end
                     end
+
+                    vernacular = vernacular_bag[field.tag + marc_match_suffix]
+
+                    series[:value] = str
+                    series[:issn] = series_issn if series_issn
+                    series[:vernacular] = vernacular if vernacular
+
+                    if !series.empty?
+                        accumulator << series
+                    end
                 end
-
-                vernacular = vernacular_bag[field.tag + marc_match_suffix]
-
-                series[:value] = str
-                series[:vernacular] = vernacular
-            end
-
-            if series.empty?
-                nil
-            else
-                series
             end
         end
 
         ################################################
         # Lambda for Generic Vernacular Object
         ######
-        def argot_gvo(spec)
+        def argot_gvo(extract_fields)
             lambda do |record,accumulator|
-                st = ArgotSemantics.get_gvo(record,spec)
-                accumulator << st if st
-            end
-        end
+                vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
 
-        ################################################
-        # Create a generic vernacular object
-        ######
-        def self.get_gvo(record,extract_fields)
-            gvo = {}
+                Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
 
-            vernacular_bag = ArgotSemantics.create_vernacular_bag(record,extract_fields)
+                    gvo = {}
 
-            Traject::MarcExtractor.cached(extract_fields, :alternate_script => false).each_matching_line(record) do |field, spec, extractor|
-                str = extractor.collect_subfields(field,spec).first
+                    str = extractor.collect_subfields(field,spec).first
 
-                marc_match_suffix = ''
+                    marc_match_suffix = ''
 
-                field.subfields.each do |subfield|
-                    if subfield.code == '6'
-                        marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                    field.subfields.each do |subfield|
+                        if subfield.code == '6'
+                            marc_match_suffix = subfield.value[subfield.value.index("-")..-1]
+                        end
+                    end
+
+                    vernacular = vernacular_bag[field.tag + marc_match_suffix]
+
+                    gvo[:value] = str
+                    gvo[:marc] = field.tag
+                    gvo[:vernacular] = vernacular if vernacular
+
+                    if !gvo.empty?
+                        accumulator << gvo
                     end
                 end
 
-                vernacular = vernacular_bag[field.tag + marc_match_suffix]
-
-                gvo[:value] = str
-                gvo[:vernacular] = vernacular
-            end
-
-            if gvo.empty?
-                nil
-            else
-                gvo
             end
         end
 

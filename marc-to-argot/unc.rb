@@ -7,3 +7,5 @@ to_field "source", literal("UNC")
 to_field "local_id", extract_marc("907a", :first => true) do |rec, acc|
     acc.map! {|v| v.delete(".")}
 end
+
+to_field "holdings_note", extract_marc("863:866")

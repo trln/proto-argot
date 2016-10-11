@@ -29,6 +29,7 @@
   "statement_of_responsibility": [
     {
       "value": null,
+      "marc": "245",
       "vernacular": {
         "lang": "/(N",
         "value": null
@@ -61,6 +62,31 @@
       ]
     }
   ],
+  "notes_additional": [
+    {
+      "value": "Chemical abstracts 0009-2258 -1973.",
+      "marc": "510"
+    },
+    {
+      "value": "Tables of contents also in English, French, and German; summaries in English, French, or German.",
+      "marc": "546"
+    },
+    {
+      "value": "Issued by Akademi︠i︡a nauk SSSR, <1956->; by Rossiĭska︠i︡a akademi︠i︡a nauk, <199 ->",
+      "marc": "550",
+      "vernacular": {
+        "lang": "/(N",
+        "value": "Issued by Академия наук СССР, <1956->; by Российская академия наук, <199 ->"
+      }
+    },
+    {
+      "value": "Author index vols. 1-10, 1956-1965 with v. 10.",
+      "marc": "555"
+    }
+  ],
+  "subjects": [
+    "Probabilities -- Periodicals"
+  ],
   "issn": [
     "0040-361X"
   ],
@@ -72,5 +98,11 @@
       "vernacular": "",
       "marc_source": "260"
     }
+  ],
+  "frequency_current": [
+    "Quarterly."
+  ],
+  "volume_date_range": [
+    "t. 1- 1956-"
   ]
 }
