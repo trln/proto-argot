@@ -19,16 +19,33 @@ extend Traject::Macros::MarcFormats
 require 'argot_semantics'
 extend Traject::Macros::ArgotSemantics
 
+require 'argot_writer'
+
+# list of attributes to "de-arrayify"
+# Traject treats all attributes as an array
+# but we want a nested, readable, JSON structure for some attributes (like title and id)
+# anything in the array below will have the attribute array become a standard object/hash
+
+flatten_attributes = %w(
+    title
+    authors
+    publication_year
+    local_id
+    source
+    id
+)
+
 # In this case for simplicity we provide all our settings, including
 # solr connection details, in this one file. But you could choose
 # to separate them into antoher config file; divide things between
 # files however you like, you can call traject with as many
 # config files as you like, `traject -c one.rb -c two.rb -c etc.rb`
 settings do
-  provide "writer_class_name", "Traject::JsonWriter"
+  provide "writer_class_name", "Traject::ArgotWriter"
   provide "output_file", "argot_out.json"
   provide 'processing_thread_pool', 3
-  provide "json_writer.pretty_print", true
+  provide "argot_writer.pretty_print", true
+  provide "argot_writer.flatten_attributes", flatten_attributes
 end
 
 

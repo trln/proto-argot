@@ -1,31 +1,23 @@
 {
-  "id": [
-    "UNC13041770"
-  ],
-  "source": [
-    "UNC"
-  ],
-  "local_id": [
-    "b13041770"
-  ],
-  "title": [
-    {
-      "sort": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
-      "abbrv": {
-        "value": "Teor. verojatn. primen.",
-        "marc": "210",
-        "vernacular": null
-      },
-      "main": {
-        "value": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
-        "marc": "245",
-        "vernacular": {
-          "lang": "rus",
-          "value": "Теория вероятностей и ее применения"
-        }
+  "id": "UNC13041770",
+  "source": "UNC",
+  "local_id": "b13041770",
+  "title": {
+    "sort": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
+    "abbrv": {
+      "value": "Teor. verojatn. primen.",
+      "marc": "210",
+      "vernacular": null
+    },
+    "main": {
+      "value": "Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a",
+      "marc": "245",
+      "vernacular": {
+        "lang": "rus",
+        "value": "Теория вероятностей и ее применения"
       }
     }
-  ],
+  },
   "statement_of_responsibility": [
     {
       "value": null,
@@ -36,32 +28,28 @@
       }
     }
   ],
-  "publication_year": [
-    1956
-  ],
-  "authors": [
-    {
-      "sort": "880-01 Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial].",
-      "other": [
-        {
-          "name": "Akademii͡a nauk SSSR.",
-          "vernacular": {
-            "lang": "rus",
-            "value": "Академия наук СССР."
-          },
-          "marc_source": "710"
+  "publication_year": 1956,
+  "authors": {
+    "sort": "880-01 Teori︠i︡a vero︠i︡atnosteĭ i ee primeneni︠i︡a [serial].",
+    "other": [
+      {
+        "name": "Akademii͡a nauk SSSR.",
+        "vernacular": {
+          "lang": "rus",
+          "value": "Академия наук СССР."
         },
-        {
-          "name": "Rossiĭskai͡a akademii͡a nauk.",
-          "vernacular": {
-            "lang": "rus",
-            "value": "Российская академия наук."
-          },
-          "marc_source": "710"
-        }
-      ]
-    }
-  ],
+        "marc_source": "710"
+      },
+      {
+        "name": "Rossiĭskai͡a akademii͡a nauk.",
+        "vernacular": {
+          "lang": "rus",
+          "value": "Российская академия наук."
+        },
+        "marc_source": "710"
+      }
+    ]
+  },
   "notes_additional": [
     {
       "value": "Chemical abstracts 0009-2258 -1973.",
