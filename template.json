@@ -1,3 +1,6 @@
+//ee = Endeca Element -- this is the Endeca Property or Dimension corresponding to the Argot element, where applicable.
+//     Uses name from Endeca Config files. These are generally the same as what's in the data model spreadsheet, but not always
+//     Mapping of config-to-spreadsheet element names: https://github.com/trln/data-documentation/blob/master/_endeca_final_elements_compiled.tsv
 
 {
     "id":{
