@@ -1,343 +1,431 @@
 
 {
-  "id":{
-    "primary":"",
-    "rollup":"",
-    "oclc":"",
-    "ead":"",
-    "local":{
-      "primary":"",
-      "other":[]
+    "id":{
+	"primary":"", //ee:UniqueId
+	"rollup":"", 
+	"oclc": "", //ee:OCLCNumber
+	"oclc_old":[],
+	"ead":"", //ee:EAD ID
+	"local":{
+	    "primary":"", //ee:LocalId
+	    "other":[] //ee:Local System Number
+	}
+    },
+
+    // ISO 8601 dates
+    "publication_date": {
+	"008":"", //ee:PubDateSort, Publication Year
+	"260":[], //ee:Published
+	"264":[] //ee:Published
+    },
+
+    "copyright_date":[], //ee:Copyright
+
+    // Arrays of ISBNs
+    "isbn":{
+	"primary":[ //would usually come from 020$a
+	    // example
+	    {
+		"number":"", //numeric portion only, indexed, can be used for Syndetics ID
+		"qualifying_info":"" //any other data in the field, if present
+		// combined, the above elements create a display ISBN field
+	    }
+	],
+	"other":[ //would probably come from 020$z and/or 776$z, etc. 
+	    // example
+	    {
+		"number":"", //numeric portion only, indexed
+		//could be used as Syndetics ID to increase probability of match, but runs risk or false match (sometimes used for incorrect ISBNs printed on an item)
+		"qualifying_info":""
+		// combined, the above elements create a display ISBN field, which can always be displayed after the primary ISBNS
+	    }
+	]
     }
-  },
 
-  // ISO 8601 dates
-  "publication_date": {
-    "008":"",
-    "260":"",
-    "264":""
-  },
+    // Array of ISSNs
+    "issn":{
+	"primary":[], //ee:ISSN
+	"linking":[], //ee:Linking ISSN
+	"series":[] //ee:Series ISSN
+    }
+    
 
-  // Array of ISBNs, [020] & [024]
-  "isbn":[],
+    // IDs to use for merging Syndetics data, ee:Syndetics ISBN (can also be UPC for media formats)
+    "syndetics_id": [], //should be multivalued to increase opportunity for matching on different ISBNs
 
-  // Array of ISSNs, [022]
-  "issn":[],
+    // Publisher Information
 
-  // ID to use for syndetics data [020] or [024] or UPC?
-  "syndetics_id": "",
+    "publisher_number":[] //ee:Publisher Number
+    
+    "publisher_etc_name":[ //ee:Publisher, Distributor, Manufacturer, Producer
+	//example
+	{
+	    "type":"",
+	    "main":"",
+	    "vernacular":{
+		"lang": "",
+		"value": ""
+	    }
+	}
+    ],
 
-  // Publisher Information
-  "publisher":{
-    // ID for the publisher [028]
-    "number":"",
-    // Array of publisher names information from [260],[264]
-    "name": [
-      //example
-      {
-        "main":"",
-        "vernacular":{
-          "lang": "",
-          "value": ""
-        }
-      }
+    // Array of Imprint/etc statements for display
+    //ee:Imprint, Sound Recording Imprint, Production Statement, Manufacturer Statement, Distribution Statement, Copyright Statement
+    "imprint":[
+	// example
+	{
+	    "type":"", //publication, soundrecording, production, manufacturer, distribution, copyright
+	    "main":"", //value of the whole field
+	    "vernacular":{
+		"lang": "",
+		"value": ""
+	    }
+	}
+    ],
+
+    // Authors
+    "authors": {
+	// Array of authors from [100],[110],[111]
+	"main": [
+	    // example
+	    {
+		"name": {
+		    // Normalized/Romanized version of Name?
+		    "main": "",
+		    // Vernacular version of name
+		    "vernacular": {
+			// Language Code
+			"lang": "",
+			// Name
+			"value": ""
+		    }
+		}
+	    }
+	],
+
+	// Array of other authors from [700],[710],[711]
+	"other": [],
+
+	// Director from [700]
+	"director":[],
+
+	// Uncontrolled from [720]
+	"uncontrolled":[]
+    },
+
+    // Title information
+    "title":{
+	// Main title, ee:Main Title
+	"main": "",
+	// Sort version of main title, ee:Title Sort
+	"sort": "", 
+	// Vernacular of main
+	"vernacular": {
+	    // Language Code
+	    "lang": "",
+	    // Name
+	    "value": ""
+	},
+	// Uniform titles
+	"uniform_main": "", //ee:Main Uniform Title (130, 240)
+	"uniform_main_vernacular":{
+	    "lang": "",
+	    "value": ""
+	},
+	"uniform_journal":"", //ee:Journal Uniform Title (130, 240 if record describes journal)
+	"uniform_journal_vernacular":{
+	    "lang": "",
+	    "value": ""
+	},
+	"uniform_collective":"", //ee:Collective Uniform Title
+	"uniform_collective_vernacular":{
+	    "lang": "",
+	    "value": ""
+	},
+	
+	//ee:Uniform Title from 730 should be mapped to:
+	// ee:Varying Titles if indicator 2 != 2
+	// Analytical title (see below) if indicator 2 = 2
+	// If we did something special with this because it's a controlled heading, maybe it'd make sense to
+	//  treat it separately; otherwise I don't think it is.
+
+	//ee:Other Titles should also just be divided between varying and analytical titles, depending on relevant indicator values
+	
+	// Main Journal Title [245], ee:Journal Title Index
+	"journal": "",
+	"journal_vernacular":{
+	    "lang": "",
+	    "value": ""
+	},
+	// Array of title abbreviations //ee:Journal Title Abbreviation, ee:Title Index
+	"abbreviation": [
+	    {
+		"main":"",
+		"vernacular": {
+		    "lang": "",
+		    "value": ""
+		}
+	    }
+	],
+	// Array of Translations ee:Other Title Translation
+	"translation":[
+	    //example
+	    {
+		"main":"",
+		"vernacular":{
+		    "lang":"",
+		    "value":""
+		}
+	    }
+	],
+	//Array of analytical titles
+	//Proposed new distinction -- any 7XX controlled author field $t or 730/740 $a if and only if 2nd indicator = 2
+	//This means the thing described CONTAINS the title recorded -- generally only used when it's a few works combined/cataloged in one volume, so this doesn't get to the level of Tables of Contents title indexing
+	//These should be displayed differently (as "Also contains:" or something) and possibly weighted differently for relevance.
+	"analytical":[
+	    //example
+	    {
+		"main":"",
+		"vernacular":{
+		    "lang":"",
+		    "value":""
+		}
+	    }
+	], 
+	// Array of Alternate Titles 
+	// Some ee:Uniform Title and ee:Varying Titles and ee:Other Titles should map here
+	// Only when 2nd indicator != 2
+	"alternate":[
+	    //example
+	    {
+		"main":"",
+		"vernacular":{
+		    "lang":"",
+		    "value":""
+		}
+	    }
+	],
+
+	//separate elements needed for proper display and possibly relevance ranking
+	"earlier":[ //ee:Journal Earlier Title, ee:Earlier Title
+	    //example
+	    {
+		"main":"",
+		"vernacular":{
+		    "lang":"",
+		    "value":""
+		}
+	    }
+	],
+
+	"later":[ //ee:Journal Later Title, ee:Later Title
+	    //example
+	    {
+		"main":"",
+		"vernacular":{
+		    "lang":"",
+		    "value":""
+		}
+	    }
+	]
+
+	//Endeca data model also has separate ee:Journal Earlier Title and ee:Journal Later Title elements
+	//See if anything can be done to reduce redundancy of fields mapped to journal title indexes
+	//No need for separate uniform_main and uniform_journal when both come from 245, etc.?
+    },
+
+    // Statement of responsibility
+    "statement_of_responsibility":{
+	"main": "",
+	"vernacular":{
+	    "lang":"",
+	    "value":""
+	}
+    },
+
+    // ee:Edition  - repeatable MARC source field
+    "edition":[
+	{
+	    "main":"",
+	    "vernacular":{
+		"lang":"",
+		"value":""
+	    }
+	}
+    ],
+
+    // Array of ee:Cartographic Data 
+    "cartographic_data":[],
+
+    // Frequency
+    "frequency":{
+	"current":"", //ee:Current Frequency
+	"former":[] //ee:Former Frequency
+    },
+
+    // Description
+    "description": {
+	"general": [] //ee:Material
+	// [344] ee:Material Details
+	"sound": [],
+	// [345] ee:Material Details
+	"projection": [],
+	// [346] ee:Material Details
+	"video": [],
+	// [347] ee:Material Details
+	"digital_file": []
+    },
+    
+    // Organization [351]
+    "organization":[],
+    // Volume / Date Ranges [362]
+    "volumes": [],
+
+    // Array of series objects [440],[490]
+    "series":[
+	// example
+	{
+	    "main":"",
+	    "vernacular":{
+		"lang":"",
+		"value":""
+	    },
+	    "issn":""
+	}
+    ],
+
+    // Series (what is the difference between 400 series and 800 series?)
+    "800_series":{
+	// 800
+	"personal": [],
+	"corporate": [],
+	"meeting": [],
+	"uniform": []
+    },
+
+
+
+    "notes": {
+	// Array of indexed notes [500],[501],[502],[504],[505],[507],[522],[533],[534],[536],[541],[561],[581],[585],[586]
+	// [590]
+	// (do we need vernacular here?)
+	"indexed":[],
+
+	// Array of additional notes [510],[513],[514],[515],[516],[518],[521],[524],[525],[533],[535]
+	// [540],[546],[547],[550],[555],[556],[565],[567],[580],[588],[590],[752]
+	"additional":[],
+
+	// [863],[866]
+	"serials_summary": []
+    },
+
+    // Access Restriction [506]
+    "access_restriction":[],
+
+    // Production Credits [508]
+    "production_credits":[],
+
+    // Performer Credits [511]
+    "performerc_credits":[],
+
+    // Summary [520]
+    "summary": [],
+
+    // Formats
+    "format": {
+	// [530]
+	"other":[]
+    },
+
+    // Source of Acquisition [541]
+    "source_of_acquisition":[],
+
+    // Related Collections [544]
+    "related_collections":[],
+
+    // Biographical Sketch [545]
+    "biographical_sketch":[],
+
+    // Most Recently Arrived [599]
+    "most_recent":[],
+
+    // Array of Subjects [600],[610],[611],[630],[650],[651],[653],[655],[690],[691],[695]
+    "subjects":[],
+
+    //field linking
+    "linking":{
+	// [760]
+	"main_series":[],
+	// [762]
+	"subseries": [],
+	// [765]
+	"translation_of": [
+	    {
+		"title":"",
+		"issn":""
+	    }
+	],
+	// [767]
+	"translated_as": [
+	    {
+		"title":"",
+		"issn":""
+	    }
+	],
+	// [770]
+	"has_supplement": [],
+	// [772]
+	"supplement_to": [],
+	// [773]
+	"host_item": [
+	    {
+		"title":"",
+		"issn":""
+	    }
+	],
+	// [773]
+	"constituent_unit": [
+	    {
+		"title":"",
+		"issn":""
+	    }
+	],
+	// [790],[791]
+	"local_added":[]
+    },
+
+    // [7xx] (unique to UNC), not sure of function
+    "name_title": [],
+
+    // [852] (unique to Duke)
+    "holdings_note": [],
+
+    // [856]
+    "urls":[
+	{
+	    "rel":"",
+	    "href":""
+	}
+    ],
+
+    // [909]
+    "cataloged_date":"",
+
+    // items (assuming we index items, this indicates the array of item_objects
+    "items":[
+	// example
+	{
+	    "id":"",
+	    "call_no":"",
+	    "circ_level":"",
+	    "doc_type":"",
+	    "due_date":"",
+	    "notes":[],
+	    "types":[],
+	    "libraries":[],
+	    "locations":[],
+	    "statuses":[],
+	    "schemes":[]
+	}
     ]
-  },
-
-  // Array of Imprints [260],[264], (including sound recordings)
-  "imprint":[
-    // example
-    {
-      "main":"",
-      "vernacular":{
-        "lang": "",
-        "value": ""
-      }
-    }
-  ],
-
-  // Other RDA Publisher Elements (could be nested)
-  "production_statement":"",
-  "producer":"",
-  "distribution_statement":"",
-  "distributor":"",
-  "manufacturer_statement":"",
-  "manufacturer":"",
-  "copyright_statement":"",
-  "copyright":"",
-
-
-  // Authors
-  "authors": {
-    // Array of authors from [100],[110],[111]
-    "main": [
-      // example
-      {
-        "name": {
-          // Normalized/Romanized version of Name?
-          "main": "",
-          // Vernacular version of name
-          "vernacular": {
-            // Language Code
-            "lang": "",
-            // Name
-            "value": ""
-          }
-        }
-      }
-    ],
-
-    // Array of other authors from [700],[710],[711]
-    "other": [],
-
-    // Director from [700]
-    "director":[],
-
-    // Uncontrolled from [720]
-    "uncontrolled":[]
-  },
-
-  // Title information
-  "title":{
-    // Main title (normalized/romanized) [130,240,245]
-    "main": "",
-    // Sort version of main title
-    "sort": "",
-    // Vernacular of main
-    "vernacular": {
-      // Language Code
-      "lang": "",
-      // Name
-      "value": ""
-    },
-    // Main Journal Title [130],[240],[245]
-    "journal": "",
-    "journal_vernacular":{
-      "lang": "",
-      "value": ""
-    },
-    // [210]
-    "abbreviation": "",
-    "abbreviation_vernacular": {
-      "lang": "",
-      "value": ""
-    },
-    // Array of Translations [242]
-    "translation":[
-      //example
-      {
-        "main":"",
-        "vernacular":{
-          "lang":"",
-          "value":""
-        }
-      }
-    ],
-    // Array of Alternate Titles [246],[247],[730],[740],[780],[785]
-    // alternate encompasses earlier/later...is distinction necessary for indexing?
-    "alternate":[
-      //example
-      {
-        "main":"",
-        "vernacular":{
-          "lang":"",
-          "value":""
-        }
-      }
-    ]
-
-  },
-
-  // Statement of responsibility
-  "statement_of_responsibility":{
-    "main": "",
-    "vernacular":{
-      "lang":"",
-      "value":""
-    }
-  },
-
-  // Edition
-  "edition":{
-    "main":"",
-    "vernacular":{
-      "lang":"",
-      "value":""
-    }
-  },
-
-  // Array of [255] entries
-  "cartographic_data":[],
-
-  // Frequency
-  "frequency":{
-    // [310]
-    "current":"",
-    // [321]
-    "former":[]
-  },
-
-  // Description
-  "description": {
-    // [344]
-    "sound": [],
-    // [345]
-    "projection": [],
-    // [346]
-    "video": [],
-    // [347]
-    "digital_file": []
-  },
-  // Organization [351]
-  "organization":[],
-  // Volume / Date Ranges [362]
-  "volumes": [],
-
-  // Array of series objects [440],[490]
-  "series":[
-    // example
-    {
-      "main":"",
-      "vernacular":{
-        "lang":"",
-        "value":""
-      },
-      "issn":""
-    }
-  ],
-
-  // Series (what is the difference between 400 series and 800 series?)
-  "800_series":{
-    // 800
-    "personal": [],
-    "corporate": [],
-    "meeting": [],
-    "uniform": []
-  },
-
-
-
-  "notes": {
-    // Array of indexed notes [500],[501],[502],[504],[505],[507],[522],[533],[534],[536],[541],[561],[581],[585],[586]
-    // [590]
-    // (do we need vernacular here?)
-    "indexed":[],
-
-    // Array of additional notes [510],[513],[514],[515],[516],[518],[521],[524],[525],[533],[535]
-    // [540],[546],[547],[550],[555],[556],[565],[567],[580],[588],[590],[752]
-    "additional":[],
-
-    // [863],[866]
-    "serials_summary": []
-  },
-
-  // Access Restriction [506]
-  "access_restriction":[],
-
-  // Production Credits [508]
-  "production_credits":[],
-
-  // Performer Credits [511]
-  "performerc_credits":[],
-
-  // Summary [520]
-  "summary": [],
-
-  // Formats
-  "format": {
-    // [530]
-    "other":[]
-  },
-
-  // Source of Acquisition [541]
-  "source_of_acquisition":[],
-
-  // Related Collections [544]
-  "related_collections":[],
-
-  // Biographical Sketch [545]
-  "biographical_sketch":[],
-
-  // Most Recently Arrived [599]
-  "most_recent":[],
-
-  // Array of Subjects [600],[610],[611],[630],[650],[651],[653],[655],[690],[691],[695]
-  "subjects":[],
-
-  //field linking
-  "linking":{
-    // [760]
-    "main_series":[],
-    // [762]
-    "subseries": [],
-    // [765]
-    "translation_of": [
-      {
-        "title":"",
-        "issn":""
-      }
-    ],
-    // [767]
-    "translated_as": [
-      {
-        "title":"",
-        "issn":""
-      }
-    ],
-    // [770]
-    "has_supplement": [],
-    // [772]
-    "supplement_to": [],
-    // [773]
-    "host_item": [
-      {
-        "title":"",
-        "issn":""
-      }
-    ],
-    // [773]
-    "constituent_unit": [
-      {
-        "title":"",
-        "issn":""
-      }
-    ],
-    // [790],[791]
-    "local_added":[]
-  },
-
-  // [7xx] (unique to UNC), not sure of function
-  "name_title": [],
-
-  // [852] (unique to Duke)
-  "holdings_note": [],
-
-  // [856]
-  "urls":[
-    {
-      "rel":"",
-      "href":""
-    }
-  ],
-
-  // [909]
-  "cataloged_date":"",
-
-  // items (assuming we index items, this indicates the array of item_objects
-  "items":[
-    // example
-    {
-      "id":"",
-      "call_no":"",
-      "circ_level":"",
-      "doc_type":"",
-      "due_date":"",
-      "notes":[],
-      "types":[],
-      "libraries":[],
-      "locations":[],
-      "statuses":[],
-      "schemes":[]
-    }
-  ]
 }
